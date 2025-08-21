@@ -6,38 +6,34 @@
   <title>Autonomous Initiative Club</title>
   <link rel="stylesheet" href="styles.css">
 </head>
-  <script>
-  function toggleMenu() {
-    document.querySelector(".header-nav").classList.toggle("active");
-  }
-</script>
 <body>
 
   <!-- VANTA BACKGROUND CONTAINER -->
   <div id="tsparticles"></div>
 
   <!-- HEADER -->
-<header>
-  <div class="header-logo">
-    <img src="lg2.png" alt="Logo">
-    <span>Autonomous Initiative Club</span>
-  </div>
+  <header>
+    <div class="header-logo">
+      <img src="lg2.png" alt="Logo">
+      <span>Autonomous Initiative Club</span>
+    </div>
 
-  <div class="hamburger" onclick="toggleMenu()">
-    <div></div>
-    <div></div>
-    <div></div>
-  </div>
+    <!-- Hamburger for phones -->
+    <div class="hamburger">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
 
-  <nav class="header-nav">
-    <a href="index.html">Home</a>
-    <a href="projects.html">Projects</a>
-    <a href="events.html">Events</a>
-    <a href="team.html">Team</a>
-    <a href="about.html">About Us</a>
-    <a href="contact.html">Contact Us</a>
-  </nav>
-</header>
+    <nav class="header-nav">
+      <a href="index.html">Home</a>
+      <a href="projects.html">Projects</a>
+      <a href="events.html">Events</a>
+      <a href="team.html">Team</a>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact Us</a>
+    </nav>
+  </header>
 
   <!-- CENTERED TEXT CONTENT -->
   <div class="overlay">
@@ -47,10 +43,19 @@
   </div>
 
   <!-- SCRIPTS -->
-  
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.waves.min.js"></script>
   <script src="script.js"></script>
+
+  <!-- Hamburger Toggle Script -->
+  <script>
+    const hamburger = document.querySelector(".hamburger");
+    const navMenu = document.querySelector(".header-nav");
+
+    hamburger.addEventListener("click", () => {
+      navMenu.classList.toggle("active");
+    });
+  </script>
 
 </body>
 </html>
