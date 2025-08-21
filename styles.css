@@ -5,7 +5,7 @@ html, body {
   height: 100%;
   font-family: 'Segoe UI', sans-serif;
   color: white;
-  background: black; /* for normal look on phone */
+  background: black; /* fallback */
 }
 
 /* Background container */
@@ -65,44 +65,51 @@ header {
   color: #00f2fe;
 }
 
-/* === Mobile Hamburger Menu === */
+/* === Hamburger Menu === */
 .hamburger {
   display: none;
   flex-direction: column;
   cursor: pointer;
-  gap: 4px;
+  gap: 5px;
 }
 
-.hamburger span {
+.hamburger div {
   width: 25px;
   height: 3px;
   background: white;
   border-radius: 2px;
 }
 
-/* Responsive */
+/* === Mobile Styles === */
 @media (max-width: 768px) {
   .header-nav {
     display: none;
+    flex-direction: column;
     position: absolute;
     top: 70px;
     right: 0;
-    background: rgba(0,0,0,0.9);
-    flex-direction: column;
+    background: rgba(0, 0, 0, 0.9);
+    padding: 20px;
+    border-radius: 0 0 0 12px;
     width: 200px;
-    padding: 10px;
   }
 
-  .header-nav.active {
-    display: flex;
+  .header-nav a {
+    padding: 10px 0;
+    font-size: 1.2rem;
+    text-align: right;
   }
 
   .hamburger {
     display: flex;
   }
+
+  .header-nav.active {
+    display: flex;
+  }
 }
 
-/* Overlay text */
+/* === Overlay Text === */
 .overlay {
   position: absolute;
   top: 55%;
@@ -135,47 +142,4 @@ p {
 @media (min-width: 768px) {
   h1 { font-size: 3rem; }
   p { font-size: 1.3rem; }
-}
-/* Hide hamburger by default */
-.hamburger {
-  display: none;
-  flex-direction: column;
-  cursor: pointer;
-  gap: 5px;
-}
-
-.hamburger div {
-  width: 25px;
-  height: 3px;
-  background: white;
-  border-radius: 2px;
-}
-
-/* Mobile styles */
-@media (max-width: 768px) {
-  .header-nav {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 70px;
-    right: 0;
-    background: rgba(0, 0, 0, 0.9);
-    padding: 20px;
-    border-radius: 0 0 0 12px;
-    width: 200px;
-  }
-
-  .header-nav a {
-    padding: 10px 0;
-    font-size: 1.2rem;
-    text-align: right;
-  }
-
-  .hamburger {
-    display: flex;
-  }
-
-  .header-nav.active {
-    display: flex;
-  }
 }
